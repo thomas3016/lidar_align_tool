@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <node name="align_node" pkg="lidar_align_tool" type="align_node">
+  </node>
+
+  
+  <!-- Load parameters -->
+  <!-- Set the name of lidar pointcloud topic  -->
+  <param name="lidar_topic" value="/rslidar_points" type="string"/>
+  <!-- Set the std_msgs::Header header_.frame_id  -->
+  
+  <param name="lidar_frame_id" value="rslidar" type="string"/>
+  <node name="align_adjust_node" pkg="lidar_align_tool" type="align_adjust_node" output="screen">
+  </node>
+
+  <node pkg="rviz" name="rviz" type="rviz"  args="-d $(find lidar_align_tool)/config/demo.rviz"/>
+
+</launch>

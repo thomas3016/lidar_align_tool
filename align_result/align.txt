@@ -1,0 +1,2 @@
+vehicle_size: 5 2 1.8 
+lidar_config: 2.5 0.2 2 1 -0.5 0.5 
